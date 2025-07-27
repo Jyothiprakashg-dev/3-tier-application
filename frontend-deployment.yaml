@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: yourdockerid/food-frontend
+        image: jyothiprakashg18/food-frontend
         ports:
         - containerPort: 80
 ---
