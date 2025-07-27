@@ -43,18 +43,20 @@ pipeline {
       }
     }
 
-    //stage('Deploy to Kubernetes') {
-      //when {
-       //branch 'main'
+    /*
+    stage('Deploy to Kubernetes') {
+      when {
+        branch 'main'
       }
-      //steps {
-        //sh """
-          //kubectl apply -f k8s/mongo-deploy.yaml
-          //kubectl set image -f k8s/frontend-deploy.yaml frontend=${FRONTEND_IMAGE} --local -o yaml | kubectl apply -f -
-          //kubectl set image -f k8s/backend-deploy.yaml backend=${BACKEND_IMAGE} --local -o yaml | kubectl apply -f -
-        """
+      steps {
+        sh '''
+          kubectl apply -f k8s/mongo-deploy.yaml
+          kubectl set image -f k8s/frontend-deploy.yaml frontend=${FRONTEND_IMAGE} --local -o yaml | kubectl apply -f -
+          kubectl set image -f k8s/backend-deploy.yaml backend=${BACKEND_IMAGE} --local -o yaml | kubectl apply -f -
+        '''
       }
     }
+    */
   }
 
   post {
@@ -62,5 +64,4 @@ pipeline {
       echo 'Build failed!'
     }
   }
- }
 }
