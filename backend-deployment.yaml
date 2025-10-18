@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: yourdockerid/food-backend
+        image: jyothiprakashg18/food-backend
         ports:
         - containerPort: 5000
         env:
